@@ -33,3 +33,5 @@ As part of data preparation, two columns were removed from the dataset: veil-typ
 #### Data Visualization
 
 ![Plot of each column including target](/1.png)
+Graph 1.1 Plots of each column including target column, showing unique variables present in each column and their distributions.
+
