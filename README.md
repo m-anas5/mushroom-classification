@@ -35,3 +35,106 @@ As part of data preparation, two columns were removed from the dataset: veil-typ
 ![Plot of each column including target](/1.png)
 Graph 1.1 Plots of each column including target column, showing unique variables present in each column and their distributions.
 
+![Plot of target column against otehr features](/2.png)
+Graph 2.1 Plots of target column against all other features, showing the distribution.
+
+### Problem Formulation
+
+The mushroom classification task was formulated as a supervised binary classification problem, where the input is a set of 22 categorical features describing mushroom characteristics, and the output is a binary label indicating whether the mushroom is edible (e) or poisonous (p). The dataset was preprocessed to remove two non-informative or incomplete columns, and the remaining categorical features were encoded using label encoding to convert them into a numerical format suitable for machine learning models.
+
+Two models were implemented and compared: Logistic Regression and a Decision Tree Classifier. Logistic Regression was chosen for its simplicity and interpretability as a baseline model. The Decision Tree was selected due to its natural handling of categorical data and ability to model non-linear relationships. For further evaluation, 4-fold cross-validation was applied to the Decision Tree to assess its generalization. Additionally, hyperparameter tuning (e.g., setting criterion='entropy' and max_depth=3) was explored to evaluate how limiting complexity affects performance. Since both models achieved high accuracy, no custom loss functions or optimizers were required; standard accuracy and classification reports were used as evaluation metrics.
+
+### Training
+
+Training was performed using Python with scikit-learn on a standard CPU-based environment (Google Colab and a local machine). Since the dataset is relatively small and both models are computationally efficient, training time was negligible—each model trained in under a second. Due to the deterministic and non-iterative nature of Decision Trees and Logistic Regression in scikit-learn, there were no training epochs or learning curves to monitor as would be the case in deep learning. Therefore, model evaluation was conducted through accuracy scores and classification metrics rather than epoch-based monitoring.
+
+There were no major difficulties during training, but handling the categorical features required attention. Label encoding was applied across all categorical inputs to maintain compatibility with both models. The dataset’s clean structure (no missing values after preprocessing and well-separated classes) contributed to the models achieving nearly perfect accuracy, making this an ideal example for demonstrating classification techniques on categorical data.
+
+### Performance Comparison
+Logistic Regression:
+
+Accuracy: 1.0
+
+Classification Report:
+
+              precision    recall  f1-score   support
+
+           e       1.00      1.00      1.00       843
+           p       1.00      1.00      1.00       782
+
+    accuracy                           1.00      1625  
+    macro avg      1.00      1.00      1.00      1625
+    weighted avg   1.00      1.00      1.00      1625
+
+Decision Tree Classifier:
+
+Accuracy: 1.0
+
+Classification Report:
+
+              precision    recall  f1-score   support
+
+           e       1.00      1.00      1.00       843
+           p       1.00      1.00      1.00       782
+
+    accuracy                           1.00      1625
+    macro avg      1.00      1.00      1.00      1625
+    weighted avg   1.00      1.00      1.00      1625
+
+Decision Tree Classifier with max_depth = 3:
+
+Accuracy: 0.96
+Classification Report:
+
+              precision    recall  f1-score   support
+
+           e       0.94      1.00      0.96       843
+           p       1.00      0.93      0.96       782
+
+    accuracy                           0.96      1625
+    macro avg      0.97      0.96      0.96      1625
+    weighted avg   0.96      0.96      0.96      1625
+
+### Conclusions
+
+The mushroom dataset proved to be well-structured and required minimal preprocessing. Aside from one column with missing values, the data was clean and ready for modeling. A Decision Tree Classifier was employed, and its performance was evaluated using 4-fold cross-validation. Additionally, hyperparameter tuning was performed to assess whether model optimization could improve results. However, both cross-validation and tuning had little effect on accuracy or other evaluation metrics. This indicates that the dataset has highly separable classes, allowing even simple models like Logistic Regression and Decision Trees to achieve near-perfect classification performance.
+
+### Future Work:
+
+**Imputation Strategies:**
+
+Instead of dropping the stalk-root column due to missing values, explore imputation methods (e.g., using most frequent value, or predictive imputation) to see if including it improves or changes model behavior.
+
+**Ensemble Models:**
+
+Try ensemble methods such as Random Forests or Gradient Boosting (e.g., XGBoost) to see if they improve performance or provide more robust generalization across folds or noisy data.
+
+## How to reproduce results
+To reproduce the results in this project, run the Jupyter notebook Document.ipynb located in the CompleteNotebook folder. This notebook includes all steps from data loading and preprocessing to model training, evaluation, and cross-validation. All code is executed from scratch—no pre-trained models or cached outputs are used.
+
+This project was developed and tested on a local machine using Jupyter Notebook within Visual Studio Code. The main Python libraries used include: pandas, numpy, seaborn, matplotlib, scikit-learn, and tabulate. Make sure these dependencies are installed before running the notebook.
+
+The accompanying functions.py file contains reusable helper functions and should be kept in the same folder as the notebook for proper execution.
+
+This repository is released under the MIT License, which allows others to freely use, modify, and distribute the code. Users are encouraged to adapt the pipeline to their own datasets or experiments if desired.
+
+### Overview of files in repository
+
+The repository consist of two folders. CompleteNotebook and ScratchNotebook, CompleteNotebook consist of:
+**CompleteNotebook:**
+Total files: 7 files
+
+- Document.ipynb, this notebook contains all essential implementations to evaluate and do calculations.
+- functions.py, this python file contain all essential functions needed to shrink the code in the notebook.
+- mushrooms.csv, csv file used.
+- 4 text files: df_head_output.txt, dfdescribe.txt, dfhead.txt, dfinformation.txt. As the names suggest these are output files just to visualize the dataset.
+
+**ScratchNotebook:**
+Total files:  4 files
+- Project_P2_pt1.ipynb, contains inital visualization
+- Project_P2_pt2.ipynb, walk through preprocessing
+- Project_P2_pt3.ipynb, displays different models and their performance
+- mushrooms.csv
+
+**Note:** The ScratchNotebook folder is for exploratory purposes only. For the complete and cleaned implementation, refer to the CompleteNotebook folder and the Document.ipynb (or Document.pdf for a read-only version).
+
