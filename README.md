@@ -40,9 +40,9 @@ Two models were implemented and compared: Logistic Regression and a Decision Tre
 
 ### Training
 
-Training was performed using Python with scikit-learn on a standard CPU-based environment (Google Colab and a local machine). Since the dataset is relatively small and both models are computationally efficient, training time was negligible—each model trained in under a second. Due to the deterministic and non-iterative nature of Decision Trees and Logistic Regression in scikit-learn, there were no training epochs or learning curves to monitor as would be the case in deep learning. Therefore, model evaluation was conducted through accuracy scores and classification metrics rather than epoch-based monitoring.
+Training was performed using Python with scikit-learn on a standard CPU-based environment. Since the dataset is relatively small and both models are computationally efficient, training time was negligible each model trained in under a second. Due to the deterministic and non-iterative nature of Decision Trees and Logistic Regression in scikit-learn, there were no training epochs or learning curves to monitor as would be the case in deep learning. Therefore, model evaluation was conducted through accuracy scores and classification metrics rather than epoch-based monitoring.
 
-There were no major difficulties during training, but handling the categorical features required attention. Label encoding was applied across all categorical inputs to maintain compatibility with both models. The dataset’s clean structure (no missing values after preprocessing and well-separated classes) contributed to the models achieving nearly perfect accuracy, making this an ideal example for demonstrating classification techniques on categorical data.
+There were no major difficulties during training, but handling the categorical features required attention. One hot encoding was applied across all categorical inputs to maintain compatibility with both models. The dataset’s clean structure (no missing values after preprocessing and well-separated classes) contributed to the models achieving nearly perfect accuracy, making this an ideal example for demonstrating classification techniques on categorical data.
 
 ### Performance Comparison
 Logistic Regression:
@@ -99,9 +99,8 @@ The mushroom dataset proved to be well-structured and required minimal preproces
 
 Instead of dropping the stalk-root column due to missing values, explore imputation methods (e.g., using most frequent value, or predictive imputation) to see if including it improves or changes model behavior.
 
-**Ensemble Models:**
-
-Try ensemble methods such as Random Forests or Gradient Boosting (e.g., XGBoost) to see if they improve performance or provide more robust generalization across folds or noisy data.
+**Get new test data:**
+Get new test data and validate on existing models.
 
 ## How to reproduce results
 To reproduce the results in this project, run the Jupyter notebook Document.ipynb located in the CompleteNotebook folder. This notebook includes all steps from data loading and preprocessing to model training, evaluation, and cross-validation. All code is executed from scratch—no pre-trained models or cached outputs are used.
