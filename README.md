@@ -4,12 +4,8 @@ This project applies machine learning algorithms to classify mushrooms as edible
 
 
 ## Overview
+This project focuses on the Mushroom Dataset from the UCI Machine Learning Repository, which contains categorical attributes describing mushrooms and classifies them as either edible or poisonous. The problem is approached as a binary classification task, using Logistic Regression as a baseline and Decision Tree as the primary model. Both models achieved 100% accuracy, indicating that the dataset is relatively simple and the features provide strong signals for classification. Although the results are not surprising, the project demonstrates how basic machine learning models can perform exceptionally well on clean, well-structured data.
 
-  The task is to use 22 categorical features describing physical characteristics of mushrooms, such as cap shape, color, gill size and spore print color to predict whether a mushroom is edible or poisnous (target column class). The dataset originally is sourced from UCI Machine Learning Repository, contains labeled examples with one column (stalk-root) missing 2480 values. Since this has a target column, it makes it well suited for supervised learning. The primary challenge lies in accurately modeling the relationships between categorical variables and ensuring the model generalizes well to unseen mushroom types.
-
-  The approach taken in this project formulates the problem as a binary classification task, aiming to predict whether a mushroom is edible or poisonous. Initial experiments were conducted using Logistic Regression and Decision Tree classifiers to evaluate performance on the dataset. After observing promising results with the Decision Tree model, cross-validation was applied using 4 splits to better assess its generalization and reduce the risk of overfitting. This comparative approach allowed for evaluating the effectiveness and interpretability of both linear and tree-based methods on categorical data.
-
-  Both the Logistic Regression and Decision Tree models achieved perfect classification accuracy of 100% on the mushroom dataset, correctly identifying all edible and poisonous mushrooms. Cross-validation using 4 folds with the Decision Tree Classifier confirmed this robustness, consistently yielding 1.0 accuracy, precision, recall, and F1-score across all folds. To evaluate generalization with constrained complexity, a Decision Tree with tuned hyperparameters (criterion='entropy', max_depth=3) was also tested, achieving a strong accuracy of 96.25%, indicating that even a shallow tree can perform well on this dataset while offering greater interpretability.
 
 ## Summary of Workdone
 
