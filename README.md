@@ -13,8 +13,6 @@ This project applies machine learning algorithms to classify mushrooms as edible
 
 ## Summary of Workdone
 
-Include only the sections that are relevant an appropriate.
-
 ### Data
 
 * Data:
