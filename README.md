@@ -4,7 +4,7 @@ This project applies machine learning algorithms to classify mushrooms as edible
 
 
 ## Overview
-This project focuses on the Mushroom Dataset from the UCI Machine Learning Repository, which contains categorical attributes describing mushrooms and classifies them as either edible or poisonous. The problem is approached as a binary classification task, using Logistic Regression as a baseline and Decision Tree as the primary model. Both models achieved 100% accuracy, indicating that the dataset is relatively simple and the features provide strong signals for classification. Although the results are not surprising, the project demonstrates how basic machine learning models can perform exceptionally well on clean, well-structured data.
+This project focuses on the Mushroom Dataset from the UCI Machine Learning Repository, which contains 22 categorical attributes describing mushrooms and classifies them as either edible or poisonous. The problem is approached as a binary classification task, using Logistic Regression as a baseline and Decision Tree as the primary model. Both models achieved 100% accuracy, indicating that the dataset is relatively simple and the features provide strong signals for classification. Although the results are not surprising, the project demonstrates how basic machine learning models can perform exceptionally well on clean, well-structured data.
 
 
 ## Summary of Workdone
