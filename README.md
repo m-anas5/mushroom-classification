@@ -32,4 +32,4 @@ As part of data preparation, two columns were removed from the dataset: veil-typ
 
 #### Data Visualization
 
-![](1.jpg)
+![Plot of each column including target](/1.pnf)
