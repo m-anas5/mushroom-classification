@@ -25,16 +25,12 @@ This project focuses on the Mushroom Dataset from the UCI Machine Learning Repos
 As part of data preparation, two columns were removed from the dataset: veil-type and stalk-root. The veil-type column was dropped because it contained only a single unique value across all instances, making it non-informative for classification. The stalk-root column was removed due to the presence of 2,480 missing values, which constituted a significant portion of the dataset. Removing these columns helped simplify the feature space and avoid the introduction of bias or noise from imputation.
 
 #### Data Visualization
-
-![Plot of each column including target](/1.png)
-Graph 1.1 Plots of each column including target column, showing unique variables present in each column and their distributions.
-
 ![Plot of target column against otehr features](/2.png)
 Graph 2.1 Plots of target column against all other features, showing the distribution.
 
 ### Problem Formulation
 
-The mushroom classification task was formulated as a supervised binary classification problem, where the input is a set of 22 categorical features describing mushroom characteristics, and the output is a binary label indicating whether the mushroom is edible (e) or poisonous (p). The dataset was preprocessed to remove two non-informative or incomplete columns, and the remaining categorical features were encoded using label encoding to convert them into a numerical format suitable for machine learning models.
+The mushroom classification task was formulated as a supervised binary classification problem, where the input is a set of 22 categorical features describing mushroom characteristics, and the output is a binary label indicating whether the mushroom is edible (e) or poisonous (p). The dataset was preprocessed to remove two non-informative or incomplete columns, and the remaining categorical features were encoded using one hot encoding to convert them into a numerical format suitable for machine learning models.
 
 Two models were implemented and compared: Logistic Regression and a Decision Tree Classifier. Logistic Regression was chosen for its simplicity and interpretability as a baseline model. The Decision Tree was selected due to its natural handling of categorical data and ability to model non-linear relationships. For further evaluation, 4-fold cross-validation was applied to the Decision Tree to assess its generalization. Additionally, hyperparameter tuning (e.g., setting criterion='entropy' and max_depth=3) was explored to evaluate how limiting complexity affects performance. Since both models achieved high accuracy, no custom loss functions or optimizers were required; standard accuracy and classification reports were used as evaluation metrics.
 
@@ -42,7 +38,7 @@ Two models were implemented and compared: Logistic Regression and a Decision Tre
 
 Training was performed using Python with scikit-learn on a standard CPU-based environment. Since the dataset is relatively small and both models are computationally efficient, training time was negligible each model trained in under a second. Due to the deterministic and non-iterative nature of Decision Trees and Logistic Regression in scikit-learn, there were no training epochs or learning curves to monitor as would be the case in deep learning. Therefore, model evaluation was conducted through accuracy scores and classification metrics rather than epoch-based monitoring.
 
-There were no major difficulties during training, but handling the categorical features required attention. One hot encoding was applied across all categorical inputs to maintain compatibility with both models. The dataset’s clean structure (no missing values after preprocessing and well-separated classes) contributed to the models achieving nearly perfect accuracy, making this an ideal example for demonstrating classification techniques on categorical data.
+There were no major difficulties during training, but handling the categorical features required attention. The dataset’s clean structure (no missing values after preprocessing and well-separated classes) contributed to the models achieving nearly perfect accuracy, making this an ideal example for demonstrating classification techniques on categorical data.
 
 ### Performance Comparison
 Logistic Regression:
